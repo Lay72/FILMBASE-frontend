@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import PeliculaCard from './PeliculaCard';
 
-const API_URL = 'https://filmbase-frontend.onrender.com/movies';
+const BACKEND_URL = 'https://filmbase-frontend.onrender.com';
+const API_URL = `${BACKEND_URL}/movies`;
 
 // Función para renderizar estrellas según la calificación (0 a 5)
 function Estrellas({ valor }) {
@@ -76,7 +78,7 @@ export default function PeliculasList() {
                             pelicula={{
                                 ...pelicula,
                                 imagen: pelicula.imagen
-                                    ? `http://localhost:4000/uploads/${pelicula.imagen}`
+                                    ? `${BACKEND_URL}/uploads/${pelicula.imagen}`
                                     : null,
                             }}
                             onEliminar={eliminarPelicula}
@@ -87,6 +89,3 @@ export default function PeliculasList() {
         </div>
     );
 }
-
-// Importa PeliculaCard
-import PeliculaCard from './PeliculaCard';
