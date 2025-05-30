@@ -1,0 +1,66 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node modules
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+build/
+out/
+
+# Uploads
+backend/uploads/
+
+# Local env files (variables de entorno, no subirlas)
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Coverage reports
+coverage/
+
+# Misc
+*.pem
+*.key
+*.crt
+*.p12
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint/stylelint cache
+.eslintcache
+.stylelintcache
+
+# React Native
+.expo/
+.expo-shared/
+
+# Opcional: archivos de DB locales
+*.sqlite
+*.db
+dump.sql

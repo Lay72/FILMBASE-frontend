@@ -1,0 +1,213 @@
+/* ====== Estilos generales ====== */
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* ====== Encabezado ====== */
+.app-header {
+    background-color: #f5c518; /* Fondo amarillo */
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.app-header h1 {
+    color: #000; /* Letras negras */
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: left;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: inherit; /* Mantiene el color del texto */
+}
+
+/* ====== Navegación (botones Inicio y Agregar Película) ====== */
+.nav-links {
+    display: flex;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* Estilos comunes para los links */
+.nav-links a {
+    text-decoration: none;
+    background-color: #f5c518; /* Amarillo */
+    color: #222; /* Texto negro */
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    width: 180px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover */
+.nav-links a:hover {
+    background-color: #e0b713;
+}
+
+/* Posicionamiento: Inicio centrado, Agregar a la derecha */
+.nav-links a:first-child {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-links a:last-child {
+    margin-left: auto;
+}
+
+/* ====== Estilo para las estrellas ====== */
+.stars-container {
+    display: inline-flex;
+    gap: 0.3rem;
+    justify-content: center;
+    margin-top: 0.25rem;
+    user-select: none;
+}
+
+.stars-container span {
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s ease;
+    font-size: 2rem;
+}
+
+.stars-container span.selected {
+    color: #f5c518; /* Dorado para estrellas seleccionadas */
+}
+
+/* ====== Formulario ====== */
+form {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #222;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 0.3);
+    text-align: left;
+    border: 2px solid #f5c518;
+}
+
+form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #f5c518;
+}
+
+form input[type='text'],
+form input[type='number'],
+form input[type='file'] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 2px solid #f5c518;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #333;
+    color: white;
+}
+
+form input:focus {
+    border-color: #ffda44;
+}
+
+/* ====== Botón amarillo general para todos los botones importantes ====== */
+.boton-amarillo,
+.pelicula-card button,
+.pelicula-card a {
+    background-color: #f5c518;
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    margin-right: 0.5rem;
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.boton-amarillo:hover,
+.pelicula-card button:hover,
+.pelicula-card a:hover {
+    background-color: #e0b713;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ====== Imagen preview dentro del formulario ====== */
+form img {
+    display: block;
+    margin: 1rem auto 0 auto;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.3);
+}
+
+/* ====== Responsividad ====== */
+@media (max-width: 600px) {
+    form {
+        padding: 1rem;
+    }
+
+    .stars-container span {
+        font-size: 1.5rem;
+    }
+}
+
+.lista-peliculas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* Card de película */
+.pelicula-card {
+    flex: 1 1 280px; /* Crece y reduce con base mínima de 280px */
+    max-width: 320px;
+    background-color: #333;
+    border: 2px solid #f5c518;
+    color: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Imagen dentro del card */
+.pelicula-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 600px) {
+    .lista-peliculas {
+        justify-content: center;
+    }
+
+    .pelicula-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
