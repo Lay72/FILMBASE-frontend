@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const API_URL = 'https://filmbase-frontend.onrender.com/movies';
+const BACKEND_URL = 'https://filmbase-frontend.onrender.com'; // URL base del backend
+const API_URL = `${BACKEND_URL}/movies`; // URL para las rutas de películas
 
 export default function FormularioPelicula() {
     const { id } = useParams();
@@ -26,7 +27,8 @@ export default function FormularioPelicula() {
                     setAño(pelicula.anio);
                     setReview(Number(pelicula.review) || 0);
                     if (pelicula.imagen) {
-                        setPreview(`${API_URL}/uploads/${pelicula.imagen}`);
+                        // Aquí usamos BACKEND_URL para cargar la imagen correctamente
+                        setPreview(`${BACKEND_URL}/uploads/${pelicula.imagen}`);
                     }
                 })
                 .catch(() => {
