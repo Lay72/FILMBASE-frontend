@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:4000/movies';
+const API_URL = 'https://filmbase-frontend.onrender.com/movies';
 
 export default function FormularioPelicula() {
     const { id } = useParams();
